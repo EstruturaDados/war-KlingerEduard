@@ -19,28 +19,28 @@ void exibirMapa(Territorio *t, int n) {
 
 void atacar(Territorio *t, int atacante, int defensor) {
     if (t[atacante].tropas <= 1) {
-        printf("\n❌ %s não tem tropas suficientes para atacar!\n", t[atacante].nome);
+        printf("\n%s não tem tropas suficientes para atacar!\n", t[atacante].nome);
         return;
     }
 
     int dadoAtaque = rand() % 6 + 1;
     int dadoDefesa = rand() % 6 + 1;
 
-    printf("\n🎯 %s (Ataque: %d) x %s (Defesa: %d)\n",
+    printf("\n%s (Ataque: %d) x %s (Defesa: %d)\n",
            t[atacante].nome, dadoAtaque, t[defensor].nome, dadoDefesa);
 
     if (dadoAtaque >= dadoDefesa) {
         t[defensor].tropas--;
-        printf("💥 Ataque bem-sucedido! %s perdeu 1 tropa.\n", t[defensor].nome);
+        printf("Ataque bem-sucedido! %s perdeu 1 tropa.\n", t[defensor].nome);
         if (t[defensor].tropas <= 0) {
-            printf("🏴‍☠️ %s conquistou o território %s!\n",
+            printf("%s conquistou o território %s!\n",
                    t[atacante].nome, t[defensor].nome);
             t[defensor].tropas = t[atacante].tropas / 2;
             strcpy(t[defensor].cor, t[atacante].cor);
         }
     } else {
         t[atacante].tropas--;
-        printf("🛡️ Defesa bem-sucedida! %s perdeu 1 tropa.\n", t[atacante].nome);
+        printf("Defesa bem-sucedida! %s perdeu 1 tropa.\n", t[atacante].nome);
     }
 }
 
@@ -79,7 +79,7 @@ int main() {
         getchar();
 
         if (atk == def || atk < 1 || atk > n || def < 1 || def > n) {
-            printf("❌ Escolha inválida!\n");
+            printf("Escolha inválida!\n");
             continue;
         }
 
@@ -88,6 +88,6 @@ int main() {
     } while (1);
 
     free(territorios);
-    printf("\n👋 Fim do jogo!\n");
+    printf("\nFim do jogo!\n");
     return 0;
 }

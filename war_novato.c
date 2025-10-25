@@ -31,7 +31,7 @@ int main() {
         printf("Cor do exército: %s\n", territorios[i].cor);
         printf("Quantidade de tropas: %d\n", territorios[i].tropas);
         printf("-------------------------\n");
-        }
+    }
 
     return 0;
 }
