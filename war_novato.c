@@ -23,7 +23,7 @@ int main() {
         scanf("%d", &territorios[i].tropas); // lê número de tropas
     }
 
-    // Exibição dos dados
+    // Exibição dos dados cadastrados
     printf("\n--- Dados dos Territórios Cadastrados ---\n");
     for (i = 0; i < 5; i++) {
         printf("Território %d:\n", i+1);
